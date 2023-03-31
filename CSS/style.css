@@ -9,3 +9,31 @@ body {
   /* facendo varie prove sull'inspector 180deg = si posizione nella parte alta della pagina - copio il colore che mi serve e ne stabilisco "altezza" in percentuale - copio l'altro colore e poi gestisco la percentuale di sfumatura */
   background: linear-gradient(180deg, #009688 13%, #dbdbd3 10%);
 }
+
+.container-box {
+  width: 80%;
+  padding-top: 30px;
+  margin: 0px auto;
+  height: 100vh;
+}
+
+.row {
+  display: flex;
+  height: 95%;
+  /* debug */
+  border: 1px solid white;
+}
+
+.col-one {
+  width: 35%;
+  /* debug */
+  border: 1px solid black;
+  height: 100%;
+}
+
+.col-two {
+  width: 65%;
+  /* debug */
+  border: 1px solid black;
+  height: 100%;
+}
