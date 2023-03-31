@@ -1,0 +1,11 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  /* facendo varie prove sull'inspector 180deg = si posizione nella parte alta della pagina - copio il colore che mi serve e ne stabilisco "altezza" in percentuale - copio l'altro colore e poi gestisco la percentuale di sfumatura */
+  background: linear-gradient(180deg, #009688 13%, #dbdbd3 10%);
+}
