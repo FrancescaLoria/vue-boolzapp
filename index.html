@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="CSS/style.css" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <title>VUE-BOOLZAPP</title>
   </head>
@@ -13,8 +26,102 @@
     <div id="app">
       <div class="container-box">
         <div class="row">
-          <div class="col-one"></div>
-          <div class="col-two"></div>
+          <div class="col-left">
+            <!-- header left -->
+            <div class="header-left">
+              <div class="header-l">
+                <div class="cont-avatar">
+                  <img src="img/avatar_io.jpg" alt="" />
+                </div>
+                <div class="avatar-name">Francesca Loria</div>
+              </div>
+              <div class="header-r">
+                <i class="fa-solid fa-circle-notch"></i>
+                <i class="fa-solid fa-message"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+            <!-- /header left -->
+            <!-- banner -->
+            <div class="banner">
+              <div class="cont-bell">
+                <i class="fa-solid fa-bell-slash"></i>
+              </div>
+              <div class="banner-text">
+                <div class="notifications">
+                  Ricevi notifiche di nuovi messaggi
+                </div>
+                <a href="">Attiva notifiche desktop</a>
+              </div>
+            </div>
+            <!-- /banner -->
+            <!-- search bar -->
+            <div class="searchbar-container">
+              <div class="search-bar">
+                <div class="search-icon">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="search-input">
+                  <input
+                    type="text"
+                    class="searchTerm"
+                    placeholder="Cerca o inizia una nuova chat"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- /search bar -->
+            <!-- User list -->
+            <div class="user-list">
+              <ul>
+                <li>
+                  <div class="card active">
+                    <div class="img-container">
+                      <img src="img/avatar_1.jpg" alt="avatar_1" />
+                    </div>
+                    <div class="text">
+                      <div class="name">Michele</div>
+                      <div class="last-message">Ultimo messaggio inviato</div>
+                    </div>
+                    <div class="hour">12:00</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card">
+                    <div class="img-container">
+                      <img src="img/avatar_2.jpg" alt="avatar_2" />
+                    </div>
+                    <div class="text">
+                      <div class="name">Fabio</div>
+                      <div class="last-message">Ultimo messaggio inviato</div>
+                    </div>
+                    <div class="hour">12:00</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- /User list -->
+          </div>
+          <div class="col-right">
+            <!-- Header right -->
+            <div class="header-right">
+              <div class="header-l">
+                <div class="cont-avatar">
+                  <img src="img/avatar_1.jpg" alt="" />
+                </div>
+                <div class="contact-name">
+                  <div class="name">Michele</div>
+                  <div class="last-view">Ultimo accesso oggi alle 12:00</div>
+                </div>
+              </div>
+              <div class="header-r">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-paperclip"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+            <!-- /Header right -->
+          </div>
         </div>
       </div>
     </div>

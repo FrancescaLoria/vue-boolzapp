@@ -3,11 +3,12 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+/* structure */
 body {
   height: 100vh;
   /* facendo varie prove sull'inspector 180deg = si posizione nella parte alta della pagina - copio il colore che mi serve e ne stabilisco "altezza" in percentuale - copio l'altro colore e poi gestisco la percentuale di sfumatura */
   background: linear-gradient(180deg, #009688 13%, #dbdbd3 10%);
+  font-family: "Mulish", sans-serif;
 }
 
 .container-box {
@@ -24,16 +25,175 @@ body {
   border: 1px solid white;
 }
 
-.col-one {
+.col-left {
+  display: flex;
+  flex-direction: column;
   width: 35%;
   /* debug */
   border: 1px solid black;
   height: 100%;
 }
 
-.col-two {
+.col-right {
   width: 65%;
   /* debug */
   border: 1px solid black;
   height: 100%;
 }
+/* /structure */
+
+/* left column */
+/* header left */
+.header-left,
+.header-right {
+  height: 60px;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cont-avatar img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.header-l,
+.header-r {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.avatar-name {
+  font-size: 13px;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+.header-r {
+  color: #b1b1b1;
+  font-size: 18px;
+  gap: 15px;
+  margin-right: 25px;
+}
+/* /header left */
+/* banner */
+.banner {
+  height: 65px;
+  background-color: #8edafc;
+  display: flex;
+  align-items: center;
+}
+
+.cont-bell {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2fbff;
+  margin-left: 10px;
+}
+
+.banner-text {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.fa-bell-slash {
+  color: #8edafc;
+}
+/* /banner */
+/* search bar */
+.searchbar-container {
+  display: flex;
+  height: 40px;
+  background-color: white;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgrey;
+  width: 95%;
+  margin: auto;
+  padding: 5px;
+}
+
+.search-icon {
+  width: 20%;
+  text-align: center;
+  color: lightgray;
+}
+
+.search-input {
+  width: 80%;
+}
+
+.search-input > input {
+  border: none;
+}
+
+.search-input > input::placeholder {
+  font-size: 12px;
+}
+
+.searchTerm {
+  width: 100%;
+  height: 100%;
+}
+/* /search bar */
+
+/* User list */
+.user-list {
+  flex-grow: 1;
+  overflow-y: scroll;
+  background-color: white;
+}
+
+.user-list .card {
+  display: flex;
+  padding: 10px 0;
+}
+
+.user-list .card.active {
+  background-color: #e9ebeb;
+}
+
+.user-list .img-container {
+  padding: 0 15px;
+}
+
+.user-list img {
+  width: 45px;
+  border-radius: 50%;
+}
+
+.user-list .text > .name,
+.header-right .contact-name > .name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.user-list .text > .last-message,
+.user-list .hour,
+.header-right .contact-name > .last-view {
+  font-weight: 500;
+  font-size: 10px;
+  color: #d0c4bb;
+}
+
+.user-list .hour {
+  margin-left: auto;
+  padding-right: 7px;
+}
+/* /User list */
+/* /left column */
+
+/* Right column */
+.header-right .contact-name > .last-view {
+  color: black;
+}
+
+/* /Right column */
