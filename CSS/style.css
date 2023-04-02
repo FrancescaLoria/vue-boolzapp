@@ -29,16 +29,10 @@ body {
   display: flex;
   flex-direction: column;
   width: 35%;
-  /* debug */
-  border: 1px solid black;
-  height: 100%;
 }
 
 .col-right {
   width: 65%;
-  /* debug */
-  border: 1px solid black;
-  height: 100%;
 }
 /* /structure */
 
@@ -192,8 +186,81 @@ body {
 /* /left column */
 
 /* Right column */
+.col-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-right {
+  border-left: 1px solid grey;
+}
+
 .header-right .contact-name > .last-view {
   color: black;
+}
+
+.messages-container {
+  flex-grow: 1;
+  background-image: url("../img/mine.jpg");
+  background-size: 70%;
+  overflow-y: scroll;
+}
+
+.messages-container > ul {
+  width: 80%;
+  padding-top: 40px;
+  margin: auto;
+  list-style-type: none;
+}
+
+.messages-container > ul > li {
+  position: relative;
+  min-width: 150px;
+  max-width: 250px;
+  margin-bottom: 10px;
+  padding: 10px 10px 20px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.messages-container > ul > li > .hour {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 9px;
+  color: #a39b94;
+}
+
+.messages-container > ul > li.send {
+  background-color: #d5f9ba;
+  margin-left: auto;
+}
+
+.messages-container > ul > li.received {
+  background-color: white;
+}
+
+.footer-right {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 60px;
+  background-color: #f3eeea;
+  border-left: 1px solid grey;
+}
+
+.footer-right > .send-message {
+  height: 75%;
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+  padding-left: 15px;
+}
+
+.footer-right > .emoticons,
+.footer-right > .mic {
+  color: #6b7376;
+  font-size: 20px;
 }
 
 /* /Right column */
