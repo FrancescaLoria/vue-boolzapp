@@ -5,6 +5,7 @@ createApp({
     return {
       currentContact: 0,
       newMessage: "",
+      searchContact: "",
       contacts: [
         {
           name: "Michele",
@@ -197,6 +198,16 @@ createApp({
           });
         }, "1000");
       }
+    },
+  },
+  // computed serve quando devi manipolare un dato "temporaneo"
+  computed: {
+    filterContacts() {
+      return this.contacts.filter((contact, index) => {
+        return contact.name
+          .toLowerCase()
+          .includes(this.searchContact.toLowerCase());
+      });
     },
   },
 }).mount("#app");
