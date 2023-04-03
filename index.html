@@ -74,8 +74,15 @@
             <!-- User list -->
             <div class="user-list">
               <ul>
-                <li v-for="(contact, index) in contacts" :key="index">
-                  <div class="card" :class="!index ? 'active' : ''">
+                <li
+                  v-for="(contact, index) in contacts"
+                  :key="index"
+                  @click="setActiveContact(index)"
+                >
+                  <div
+                    class="card"
+                    :class="index === currentContact ? 'active' : ''"
+                  >
                     <div class="img-container">
                       <img
                         :src="`img/avatar${contact.avatar}.jpg`"
@@ -98,10 +105,13 @@
             <div class="header-right">
               <div class="header-l">
                 <div class="cont-avatar">
-                  <img src="img/avatar_1.jpg" alt="" />
+                  <img
+                    :src="`img/avatar${contacts[currentContact].avatar}.jpg`"
+                    alt=""
+                  />
                 </div>
                 <div class="contact-name">
-                  <div class="name">Michele</div>
+                  <div class="name">{{contacts[currentContact].name}}</div>
                   <div class="last-view">Ultimo accesso oggi alle 12:00</div>
                 </div>
               </div>
@@ -115,16 +125,12 @@
             <!-- Messages container -->
             <div class="messages-container">
               <ul>
-                <li class="send">
-                  <div class="text">Hai portato a spasso il cane</div>
-                  <div class="hour">12:00</div>
-                </li>
-                <li class="send">
-                  <div class="text">Hai portato a spasso il cane</div>
-                  <div class="hour">12:00</div>
-                </li>
-                <li class="received">
-                  <div class="text">Hai portato a spasso il cane</div>
+                <li
+                  :class="message.status"
+                  v-for="(message, index) in contacts[currentContact].messages"
+                  :key="index"
+                >
+                  <div class="text">{{message.message}}</div>
                   <div class="hour">12:00</div>
                 </li>
               </ul>
@@ -136,7 +142,7 @@
                 <i class="fa-regular fa-face-smile"></i>
               </div>
               <input
-                class="send-message"
+                class="sent-message"
                 type="text"
                 placeholder="Scrivi un messaggio"
               />

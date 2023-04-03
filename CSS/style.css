@@ -235,7 +235,7 @@ body {
   color: #a39b94;
 }
 
-.messages-container > ul > li.send {
+.messages-container > ul > li.sent {
   background-color: #d5f9ba;
   margin-left: auto;
 }
@@ -253,7 +253,7 @@ body {
   border-left: 1px solid grey;
 }
 
-.footer-right > .send-message {
+.footer-right > .sent-message {
   height: 75%;
   width: 80%;
   border: none;
