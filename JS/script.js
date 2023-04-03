@@ -4,6 +4,7 @@ createApp({
   data() {
     return {
       currentContact: 0,
+      newMessage: "",
       contacts: [
         {
           name: "Michele",
@@ -41,6 +42,11 @@ createApp({
               date: "20/03/2020 16:30:55",
               message: "Bene grazie! Stasera ci vediamo?",
               status: "received",
+            },
+            {
+              date: "20/03/2020 16:35:00",
+              message: "Mi piacerebbe ma devo andare a fare la spesa.",
+              status: "sent",
             },
             {
               date: "20/03/2020 16:35:00",
@@ -173,6 +179,24 @@ createApp({
     // funzione dove gli passo un argomento
     setActiveContact(index) {
       this.currentContact = index;
+    },
+    onEnter() {
+      // trim rimuove gli spazi bianchi all'inizio e alla fine di una stringa
+      if (this.newMessage && this.newMessage.trim()) {
+        this.contacts[this.currentContact].messages.push({
+          date: "20/03/2020 16:35:00",
+          message: this.newMessage,
+          status: "sent",
+        });
+        this.newMessage = "";
+        setTimeout(() => {
+          this.contacts[this.currentContact].messages.push({
+            date: "20/03/2020 16:35:00",
+            message: "ok",
+            status: "received",
+          });
+        }, "1000");
+      }
     },
   },
 }).mount("#app");
