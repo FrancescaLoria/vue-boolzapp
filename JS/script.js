@@ -4,6 +4,7 @@ createApp({
   data() {
     return {
       currentContact: 0,
+      tempContact: 0,
       newMessage: "",
       searchContact: "",
       contacts: [
@@ -183,6 +184,7 @@ createApp({
     },
     onEnter() {
       // trim rimuove gli spazi bianchi all'inizio e alla fine di una stringa
+      this.tempContact = this.currentContact;
       if (this.newMessage && this.newMessage.trim()) {
         this.contacts[this.currentContact].messages.push({
           date: "20/03/2020 16:35:00",
@@ -191,11 +193,12 @@ createApp({
         });
         this.newMessage = "";
         setTimeout(() => {
-          this.contacts[this.currentContact].messages.push({
+          this.contacts[this.tempContact].messages.push({
             date: "20/03/2020 16:35:00",
             message: "ok",
             status: "received",
           });
+          this.tempContact = 0;
         }, "1000");
       }
     },
